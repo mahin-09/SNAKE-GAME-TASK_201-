@@ -9,7 +9,7 @@ public:
     int getX();
     int getY();
     void setPosition(int x, int y);
-    void spawn(int windowWidth, int windowHeight); // ADD THIS
+    void spawn(int windowWidth, int windowHeight);
 private:
     sf::RectangleShape food;
 };

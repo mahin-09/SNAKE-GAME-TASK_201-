@@ -1,14 +1,14 @@
 #include "Food.h"
-#include <cstdlib> // ADD THIS
+#include <cstdlib>
 
 Food::Food()
 {
     food.setSize({ 20.f, 20.f });
     food.setFillColor(sf::Color::Red);
-    spawn(800, 600); // CHANGED: was hardcoded position
+    spawn(800, 600);
 }
 
-void Food::spawn(int windowWidth, int windowHeight) // ADD THIS FUNCTION
+void Food::spawn(int windowWidth, int windowHeight)
 {
     int x = (rand() % (windowWidth / 20)) * 20;
     int y = (rand() % (windowHeight / 20)) * 20;

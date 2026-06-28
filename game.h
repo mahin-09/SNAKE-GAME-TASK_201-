@@ -14,6 +14,8 @@ private:
     Snake snake;
     Food food;
     int score;
-    sf::Font font;       // ADD THIS
-    sf::Text scoreText;  // ADD THIS
+    bool gameOver;
+    sf::Font font;
+    sf::Text scoreText;
+    sf::Text gameOverText;
 };

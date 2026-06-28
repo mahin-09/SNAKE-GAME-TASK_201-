@@ -1,6 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include <vector> // ADD THIS
+#include <vector>
 
 class Snake
 {
@@ -12,12 +12,14 @@ public:
     void moveDown();
     void moveLeft();
     void moveRight();
-    void grow(); // ADD THIS
+    void grow();
+    bool checkSelfCollision();
+    bool isMoving(); // ADD THIS
     int getX();
     int getY();
 private:
     sf::RectangleShape body;
-    std::vector<sf::Vector2i> segments; // ADD THIS
+    std::vector<sf::Vector2i> segments;
     int x;
     int y;
     int speed;
