@@ -19,6 +19,8 @@ public:
     void moveDown();
     void moveLeft();
     void moveRight();
+    int getX();
+    int getY();
 
 private:
     sf::RectangleShape body;

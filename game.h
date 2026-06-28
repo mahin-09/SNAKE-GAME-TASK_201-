@@ -4,6 +4,7 @@
 #include <optional>
 
 #include "Snake.h"
+#include "Food.h"
 
 class Game
 {
@@ -15,4 +16,6 @@ private:
     sf::RenderWindow window;
 
     Snake snake;
+    Food food;
+    int score;
 };
