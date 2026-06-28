@@ -1,14 +1,14 @@
 #include "Game.h"
 #include <cstdlib>
 #include <ctime>
-#include <string> // ADD THIS
+#include <string>
 
 Game::Game()
 {
     srand((unsigned)time(nullptr));
     window.create(sf::VideoMode({ 800, 600 }), "Snake Game");
     window.setFramerateLimit(10);
-    score = 0; // ADD THIS — initialize score
+    score = 0;
 }
 
 void Game::run()
@@ -37,9 +37,10 @@ void Game::run()
 
         snake.move();
 
-        // ADD THIS BLOCK — food collision
+        // food collision
         if (snake.getX() == food.getX() && snake.getY() == food.getY())
         {
+            snake.grow();
             food.spawn(800, 600);
             score += 10;
         }
