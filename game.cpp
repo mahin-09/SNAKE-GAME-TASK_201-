@@ -3,12 +3,18 @@
 #include <ctime>
 #include <string>
 
-Game::Game()
+Game::Game() : scoreText(font) // CHANGE THIS LINE
 {
     srand((unsigned)time(nullptr));
     window.create(sf::VideoMode({ 800, 600 }), "Snake Game");
     window.setFramerateLimit(10);
     score = 0;
+
+    // ADD THIS BLOCK — font and score text setup
+    font.openFromFile("arial.ttf");
+    scoreText.setCharacterSize(24);
+    scoreText.setFillColor(sf::Color::White);
+    scoreText.setPosition({ 10.f, 10.f });
 }
 
 void Game::run()
@@ -37,7 +43,6 @@ void Game::run()
 
         snake.move();
 
-        // food collision
         if (snake.getX() == food.getX() && snake.getY() == food.getY())
         {
             snake.grow();
@@ -48,6 +53,11 @@ void Game::run()
         window.clear(sf::Color::Black);
         food.draw(window);
         snake.draw(window);
+
+        // ADD THIS BLOCK — draw score
+        scoreText.setString("Score: " + std::to_string(score));
+        window.draw(scoreText);
+
         window.display();
     }
 }
